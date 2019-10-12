@@ -1,0 +1,38 @@
+.main-screen {
+  background-image: url('../img/main-bg.jpeg');
+  background-repeat: no-repeat;
+  //background-size: cover;
+  background-size: 130% 100%;
+  padding-top: 180px;
+  padding-bottom: 150px;
+
+  //background: @gray;
+  color: @white;
+
+  &__info {
+    max-width: 300px;
+
+    p {
+      font-size: 45px;
+      line-height: 1;
+
+      &.-xl {
+
+        span {
+          font-size: 190px;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 16px;
+      margin-bottom: 40px;
+
+      li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

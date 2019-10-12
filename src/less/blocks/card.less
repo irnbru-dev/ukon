@@ -1,0 +1,135 @@
+.card {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  color: @gray;
+  transition: border .2s ease-in-out, color .2s ease-in-out;
+  margin-bottom: 30px;
+  border-radius: 0;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    background: transparent;
+    transition: background .2s ease-in-out
+  }
+
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+  &--sm {
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+
+    .card__icon {
+      margin-right: 15px;
+    }
+  }
+
+  &--xl {
+    height: 250px;
+    padding: 25px 0 35px 35px;
+
+    .card__icon {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__icon {
+    width: 37px;
+    height: 40px;
+    border: 1px solid @yellow;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    padding-left: 30px;
+    font-size: 14px;
+
+    li {
+      margin-bottom: 5px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        display: inline-block;
+        content: '';
+        left: -30px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background-image: url('../img/svg/list-icon.svg');
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  &--brown {
+    &:hover {
+
+      &:before {
+        background-color: @yellow;
+      }
+
+      .card__title {
+        color: @yellow
+      }
+    }
+  }
+
+  &--blue {
+    &:hover {
+      &:before {
+        background-color: @blue;
+      }
+    }
+  }
+
+
+  &-img {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+
+    &__img {
+      background: lightgoldenrodyellow;
+      width: 266px;
+    }
+
+    &__text {
+      padding: 30px;
+      background: @gray-extra-light;
+    }
+  }
+
+  &__date {
+    color: #333333;
+  }
+}

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tornado', sans-serif;
+  color: @gray;
+}
+
+.container {
+  position: relative;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+
+  margin-bottom: 50px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a.link {
+  color: @blue;
+  border-bottom: 1px dashed @blue;
+
+  &:hover {
+    text-decoration: none;
+    border: none;
+  }
+}
+
+.section {
+  padding: 120px 0;
+
+  &--light-bg {
+    background: @gray-extra-light;
+  }
+
+  &--blue-bg {
+    background-color: @blue;
+
+    h2 {
+      color: @white;
+    }
+  }
+}
+
+.-center {
+  text-align: center !important;
+}
+
+.-mt-180 {
+  margin-top: -180px;
+}

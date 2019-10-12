@@ -21,15 +21,15 @@ const autoprefix = new LessPluginAutoPrefix({browsers: ['last 20 versions', 'ie 
 const path = {
     src: {
         less: 'src/less/style.less',
-        js: 'src/js/script.js',
+        js: 'src/js/script.js'
     },
     watch: {
         js: 'src/js/**/*.js',
         less: 'src/**/*.less'
     },
     dist: {
-        js: 'build/js',
-        css: 'build/css'
+        js: 'wp-content/themes/ukon/js/',
+        css: 'wp-content/themes/ukon/css/'
     }
 };
 
@@ -43,11 +43,6 @@ let onError = (err) => {
 gulp.task('js', () => {
     return gulp.src(path.src.js)
         .pipe(plumber({errorHandler: onError}))
-        .pipe(bro({
-            transform: [
-                babelify.configure({presets: ['@babel/env']})
-            ]
-        }))
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(path.dist.js))
