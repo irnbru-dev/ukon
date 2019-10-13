@@ -1,0 +1,28 @@
+.content {
+  width: 100%;
+
+  ul {
+    padding-left: 30px;
+
+    li {
+      margin-bottom: 5px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        display: inline-block;
+        content: '';
+        left: -30px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background-image: url('../img/svg/list-icon.svg');
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}

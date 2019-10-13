@@ -6,6 +6,7 @@
   transition: border .2s ease-in-out, color .2s ease-in-out;
   margin-bottom: 30px;
   border-radius: 0;
+  background: @white;
 
   &:before {
     position: absolute;
@@ -25,7 +26,6 @@
     }
   }
 
-
   &--sm {
     height: 130px;
     display: flex;
@@ -39,7 +39,7 @@
 
   &--xl {
     height: 250px;
-    padding: 25px 0 35px 35px;
+    padding: 25px 25px 35px 35px;
 
     .card__icon {
       margin-bottom: 15px;
@@ -58,11 +58,16 @@
     }
   }
 
-
   &__title {
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 12px;
+  }
+
+  &__subtitle {
+    color: #afafaf;
+    font-size: 15px;
+    display: block;
   }
 
   ul {
@@ -112,7 +117,6 @@
     }
   }
 
-
   &-img {
     display: flex;
     flex-direction: row;
@@ -130,6 +134,6 @@
   }
 
   &__date {
-    color: #333333;
+    color: #afafaf;
   }
 }

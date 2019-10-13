@@ -23,15 +23,22 @@
 
   &__main {
     color: @white;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 50;
+    background: @blue;
 
-    display: flex;
-    flex-direction: row;
-    padding: 15px;
+    &-wrap {
+      display: flex;
+      flex-direction: row;
+      padding: 15px;
+    }
+
+    &-page {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: transparent;
+    }
   }
 
   .logo {

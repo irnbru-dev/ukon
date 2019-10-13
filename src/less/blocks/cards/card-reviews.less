@@ -1,0 +1,30 @@
+.card-reviews {
+  padding: 45px;
+  display: flex;
+  flex-direction: row;
+
+  &__imgs {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 145px;
+    flex-shrink: 0;
+
+    img {
+      border: 1px solid @gray-light;
+      height: 180px;
+    }
+
+    .card-reviews__logo {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__info {
+    margin-left: 30px;
+  }
+}

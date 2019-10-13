@@ -1,0 +1,33 @@
+.card-team {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  &__img {
+    width: 150px;
+    height: 230px;
+    background: @yellow;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 40px;
+    width: 100%;
+  }
+
+  &__link {
+    color: @yellow;
+    border-bottom: 1px dashed @yellow;
+    transition: border .2s ease-in-out;
+
+    &:hover {
+      border: none;
+      text-decoration: none;
+      color: @yellow;
+    }
+  }
+}
