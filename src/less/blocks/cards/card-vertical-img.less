@@ -1,0 +1,51 @@
+.card-vertical-img {
+  display: flex;
+  flex-direction: column;
+
+  .card__img {
+    height: 200px;
+    background: @yellow;
+    position: relative;
+
+    .icon-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background: @white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 35px;
+        height: auto;
+      }
+    }
+  }
+
+  &__text {
+    padding: 25px;
+    height: 200px;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    color: @yellow;
+    border-bottom: 1px dashed @yellow;
+    transition: border .2s ease-in-out;
+    margin-top: auto;
+    font-size: 14px;
+
+    &:hover {
+      border: none;
+      text-decoration: none;
+      color: @yellow;
+    }
+  }
+}

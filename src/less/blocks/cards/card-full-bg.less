@@ -1,0 +1,23 @@
+.card-full-bg {
+  height: 200px;
+  background: @yellow;
+  position: relative;
+
+  &__text {
+    padding: 10px 16px;
+    background: @white;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      border: 17px solid transparent;
+      border-left: 11px solid @white;
+      border-top: 25px solid @white;
+      top: 0;
+      left: 100%;
+    }
+  }
+}
