@@ -23,7 +23,7 @@ get_header(); ?>
         <div class="container">
             <h2 class="-center">Полный перечень услуг</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <a href="#" class="card__link">
                         <div class="card card--brown card--xl">
                             <div class="card__icon"></div>
@@ -36,7 +36,7 @@ get_header(); ?>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <a href="#" class="card__link">
                         <div class="card card--brown card--xl">
                             <div class="card__icon"></div>
@@ -49,7 +49,7 @@ get_header(); ?>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <a href="#" class="card__link">
                         <div class="card card--brown card--xl">
                             <div class="card__icon"></div>
@@ -59,7 +59,7 @@ get_header(); ?>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <a href="#" class="card__link">
                         <div class="card card--brown card--xl">
                             <div class="card__icon"></div>
@@ -69,7 +69,7 @@ get_header(); ?>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <a href="#" class="card__link">
                         <div class="card card--brown card--xl">
                             <div class="card__icon"></div>
@@ -80,12 +80,9 @@ get_header(); ?>
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="section section--light-bg -mt-180">
-        <div class="container">
-            <h2 class="-center">Готовые решения</h2>
+
+            <h2 class="-center mt-5">Готовые решения</h2>
             <div class="row">
                 <div class="col-md-4">
                     <a href="#" class="card__link">
@@ -270,16 +267,16 @@ get_header(); ?>
             <h2 class="-center">Нас выбирают</h2>
             <div class="clients-owl owl-carousel">
                 <div class="clients__item">
-                    <img src="" alt="">
+                    <img src="/wp-content/themes/ukon//img/client.png" alt="">
                 </div>
                 <div class="clients__item">
-                    <img src="" alt="">
+                    <img src="/wp-content/themes/ukon//img/client.png" alt="">
                 </div>
                 <div class="clients__item">
-                    <img src="" alt="">
+                    <img src="/wp-content/themes/ukon//img/client.png" alt="">
                 </div>
                 <div class="clients__item">
-                    <img src="" alt="">
+                    <img src="/wp-content/themes/ukon//img/client.png" alt="">
                 </div>
             </div>
         </div>
@@ -288,10 +285,34 @@ get_header(); ?>
     <section class="section section--light-bg">
         <div class="container">
             <h2 class="-center">Отзывы</h2>
-            <div class="owl-carousel">
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
+            <div class="reviews-owl owl-carousel">
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="/wp-content/themes/ukon/img/review.jpg" alt="">
+                </div>
             </div>
         </div>
     </section>
@@ -318,7 +339,7 @@ get_header(); ?>
                 <a href="#" class="card__link">
                     <div class="card card-img card--brown">
                         <div class="card-img__img">
-                            <img src="" alt="">
+                            <img src="/wp-content/themes/ukon/img/house-1.jpg" alt="">
                         </div>
                         <div class="card-img__text">
                             <div class="card__title">Элитный жилой комплекс "Парадный квартал"</div>
@@ -331,7 +352,7 @@ get_header(); ?>
                 <a href="#" class="card__link">
                     <div class="card card-img card--brown">
                         <div class="card-img__img">
-                            <img src="" alt="">
+                            <img src="/wp-content/themes/ukon/img/house-2.jpg" alt="">
                         </div>
                         <div class="card-img__text">
                             <div class="card__title">Элитный жилой комплекс "Парадный квартал"</div>

@@ -18,19 +18,31 @@
         <div class="header__top">
 
             <div class="address">
-                <a href="#">Шпалерная улица, дом 40а офис 301</a>
+                <a href="#">
+                    <img src="/wp-content/themes/ukon/img/point.png" alt="" class="icon">
+                    Шпалерная улица, дом 40а офис 301
+                </a>
             </div>
 
             <div class="mail">
-                <a href="#">kadastr@ukon-plus.ru</a>
+                <a href="#">
+                    <img src="/wp-content/themes/ukon/img/mail.png" alt="" class="icon">
+                    kadastr@ukon-plus.ru
+                </a>
             </div>
 
             <div class="tel">
-                <a href="#">+7 812 449-47-15</a>
+                <a href="#">
+                    <img src="/wp-content/themes/ukon/img/tel.png" alt="" class="icon">
+                    +7 812 449-47-15
+                </a>
                 <a href="#" class="link">Обратный звонок</a>
             </div>
 
-            <div class="search">поиск</div>
+            <div class="search">
+                поиск
+                <img src="/wp-content/themes/ukon/img/search.png" alt="" class="icon">
+            </div>
         </div>
     </div>
 
@@ -45,7 +57,9 @@
                 </div>
 
                 <nav class="navbar navbar-expand-lg main-nav">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="mainNav">

@@ -1,19 +1,30 @@
 .question {
-  //background: @blue;
   color: @white;
-  padding: 120px 0;
   background-image: url('../img/plan.png');
   background-repeat: no-repeat;
   background-size: cover;
 
+  padding: 60px 0;
+
+  @media @view-desktop {
+    padding: 120px 0;
+  }
+
   &__text {
     max-width: 300px;
-    margin-left: 150px;
+
+    @media @view-desktop {
+      margin-left: 150px;
+    }
 
     p {
-      font-size: 36px;
+      font-size: 28px;
       font-weight: 500;
       margin-bottom: 30px;
+
+      @media @view-desktop {
+        font-size: 36px;
+      }
     }
   }
 }

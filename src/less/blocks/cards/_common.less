@@ -21,16 +21,30 @@
 
   &__link {
     text-decoration: none;
+    color: @gray;
+    transition: all .2s ease-in-out;
     &:hover {
       text-decoration: none;
+      color: @gray;
+
+      .card__title {
+        color: @yellow;
+      }
     }
   }
 
   &--sm {
-    height: 130px;
     display: flex;
     flex-direction: row;
-    padding: 40px;
+    padding: 23px;
+
+    @media @view-tablet {
+      height: 130px;
+    }
+
+    @media @view-desktop {
+      padding: 40px;
+    }
 
     .card__icon {
       margin-right: 15px;
@@ -38,8 +52,11 @@
   }
 
   &--xl {
-    height: 250px;
     padding: 25px 25px 35px 35px;
+
+    @media @view-tablet {
+      height: 250px;
+    }
 
     .card__icon {
       margin-bottom: 15px;
@@ -117,23 +134,8 @@
     }
   }
 
-  &-img {
-    display: flex;
-    flex-direction: row;
-    height: 200px;
-
-    &__img {
-      background: lightgoldenrodyellow;
-      width: 266px;
-    }
-
-    &__text {
-      padding: 30px;
-      background: @gray-extra-light;
-    }
-  }
-
   &__date {
     color: #afafaf;
+    margin-bottom: 0;
   }
 }

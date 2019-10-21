@@ -1,0 +1,24 @@
+.card-img {
+  display: flex;
+  flex-direction: column;
+
+  @media @view-tablet {
+    flex-direction: row;
+    height: 200px;
+  }
+
+  &__img {
+    background: lightgoldenrodyellow;
+    width: 100%;
+
+    @media @view-tablet {
+      width: 266px;
+    }
+  }
+
+  &__text {
+    padding: 30px;
+    background: @gray-extra-light;
+  }
+
+}

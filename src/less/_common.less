@@ -13,9 +13,17 @@ body {
 
 h2 {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
 
   margin-bottom: 50px;
+
+  @media @view-tablet {
+    font-size: 32px;
+  }
+
+  @media @view-desktop {
+    font-size: 36px;
+  }
 }
 
 ul {
@@ -34,7 +42,11 @@ a.link {
 }
 
 .section {
-  padding: 120px 0;
+  padding: 60px 0;
+
+  @media @view-desktop {
+    padding: 120px 0;
+  }
 
   &--light-bg {
     background: @gray-extra-light;

@@ -32,3 +32,14 @@
 .owl-carousel .owl-nav button.owl-next {
   right: -60px;
 }
+
+.reviews-owl .owl-item.active:not(.center) {
+  transform: scale(.7);
+  position: relative;
+  left: 150px;
+  z-index: -1;
+}
+
+.reviews-owl .owl-item.center + .owl-item.active {
+  left: -150px;
+}

@@ -74,7 +74,7 @@ get_header(); ?>
 
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card__link">
+                            <a href="#" class="card__link">
                                 <div class="card card-vertical-img">
                                     <div class="card__img">
                                         <div class="icon-box">
@@ -92,7 +92,7 @@ get_header(); ?>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
