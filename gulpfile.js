@@ -9,8 +9,6 @@ const rename = require('gulp-rename');
 
 // js
 const uglify = require('gulp-uglify');
-const bro = require('gulp-bro');
-const babelify = require('babelify');
 
 // styles
 const less = require('gulp-less');

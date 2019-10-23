@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/irnbru-dev/ukon/issues"
   },
-  "homepage": "https://github.com/irnbru-dev/ukon#readme"
+  "homepage": "https://github.com/irnbru-dev/ukon#readme",
+  "dependencies": {
+    "babelify": "^10.0.0",
+    "gulp": "^3.9.1",
+    "gulp-bro": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^4.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "less-plugin-autoprefix": "^2.0.0"
+  }
 }

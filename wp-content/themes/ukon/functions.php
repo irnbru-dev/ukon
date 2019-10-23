@@ -47,3 +47,11 @@ function ukon_scripts() {
     wp_enqueue_script( 'app-script', get_template_directory_uri() . '/js/app.min.js', array(), '0.0.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'ukon_scripts' );
+
+/**
+ * Add custom menu
+ */
+function wpb_custom_new_menu() {
+    register_nav_menu('my-custom-menu',__( 'My Custom Menu' ));
+}
+add_action( 'init', 'wpb_custom_new_menu' );

@@ -1,3 +1,10 @@
+$('.navbar-toggler').on('click', function () {
+    $target = $(this).data("target");
+
+    console.log($target);
+    $('.menu-main-container').toggleClass('show');
+});
+
 $(function () {
     $(".owl-projects").owlCarousel({
         loop: true,
