@@ -27,7 +27,7 @@ get_header(); ?>
 
                     <div class="banner">
                         <div class="banner__text">
-                            <h1><?= the_title(); ?></h1>
+                            <h1 class="banner__title"><?= the_title(); ?></h1>
                         </div>
                     </div>
 

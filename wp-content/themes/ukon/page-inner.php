@@ -30,12 +30,12 @@ get_header(); ?>
                                 перепланировки</a></li>
                     </ul>
                 </aside>
-
+s
                 <div class="content">
 
-                    <div class="banner">
+                    <div class="banner" style="background-image: url(<?= get_field('page_inner_banner')['background']; ?>);">
                         <div class="banner__text">
-                            <h1><?= get_field('page_inner_banner')['title'] ? get_field('page_inner_banner')['title'] : the_title() ?></h1>
+                            <h1 class="banner__title"><?= get_field('page_inner_banner')['title'] ? get_field('page_inner_banner')['title'] : the_title() ?></h1>
 
                             <?php if (get_field('page_inner_banner')['subtitle']) : ?>
                                 <p><?= get_field('page_inner_banner')['subtitle'] ?></p>
@@ -45,34 +45,6 @@ get_header(); ?>
                     </div>
 
                     <?= the_content(); ?>
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card__link">
-                                <div class="card-simple">
-                                    <div class="card-simple__icon"></div>
-                                    <p>Технический план нежилого помещения</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card__link">
-                                <div class="card card-simple">
-                                    <div class="card-simple__icon"></div>
-                                    <p>Технический план квартиры</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card__link">
-                                <div class="card-simple">
-                                    <div class="card-simple__icon"></div>
-                                    <p>Технический план литейно-протяженного объекта</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="form">
                         <h2 class="-center">Оставить заявку</h2>

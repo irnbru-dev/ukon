@@ -1,12 +1,9 @@
 (function() {
-    tinymce.PluginManager.add('card_simple_button', function( editor, url ) { // true_mce_button - ID кнопки
-        editor.addButton('card_simple_button', {  // true_mce_button - ID кнопки, везде должен быть одинаковым
+    tinymce.PluginManager.add('card_simple_button', function( editor, url ) { // card_simple_button - ID кнопки
+        editor.addButton('card_simple_button', {  // card_simple_button - ID кнопки, везде должен быть одинаковым
             text: 'Карточка',
-            title: 'Добавить карточку', // всплывающая подсказка
-            icon: 'fa fa-camera-retro', // тут можно указать любую из существующих векторных иконок в TinyMCE либо собственный CSS-класс
-            // onclick: function() {
-            //     editor.insertContent('[misha]'); // вставляем шорткод [misha] в редактор, также можно задать любое действие jQuery
-            // }
+            title: 'Добавить карточку',
+            icon: 'fa fa-camera-retro',
 
             onclick: () => {
                 editor.windowManager.open({
@@ -95,6 +92,34 @@
                 });
             }
         });
+    });
+
+    jQuery(document).ready(function ($) {
+        $(document).on('click', '.mce-icon_upload_button', upload_image_tinymce);
+
+        function upload_image_tinymce(e) {
+            e.preventDefault();
+            let $btn = $(this);
+            let $inputField = $btn.prev();
+
+            let customUploader = wp.media.frames.file_frame = wp.media({
+                title: 'Добавить изображение',
+                button: {
+                    text: 'Добавить'
+                },
+                multiple: false
+            });
+
+            customUploader.on('select', function () {
+                let attachment = customUploader.state().get('selection').first().toJSON();
+                let url = attachment.url.replace(/^[a-z]{4,5}\:\/\/[a-z\.]+(.*)/, '$1');
+                console.log(url);
+
+                $inputField.val(url);
+            });
+
+            customUploader.open();
+        }
     });
 })();
 

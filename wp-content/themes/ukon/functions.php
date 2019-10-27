@@ -53,9 +53,10 @@ function ukon_scripts()
 add_action('wp_enqueue_scripts', 'ukon_scripts');
 
 
-add_action( 'after_setup_theme', 'customEditorStyles' );
-function customEditorStyles() {
-    add_editor_style( 'admin-styles.css' );
+add_action('after_setup_theme', 'customEditorStyles');
+function customEditorStyles()
+{
+    add_editor_style('admin-styles.css');
 }
 
 /**
@@ -71,57 +72,108 @@ add_action('init', 'wpb_custom_new_menu');
 /**
  * Registers custom post types and taxonomies
  */
-// Our custom post type function
-function create_posttype() {
+function create_posttype()
+{
 
-    register_post_type( 'Контакты',
-        // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Контакты' ),
-                'singular_name' => __( 'Контакты' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'contacts'),
-        )
+    register_post_type('company',
+        [
+            'labels' => [
+                'name' => __('Компания'),
+                'singular_name' => __('Компания'),
+                'add_new' => __('Добавить данные')
+            ],
+            'public' => false,
+            'has_archive' => false,
+            'rewrite' => ['slug' => 'company'],
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_in_nav_menus' => true,
+            'show_in_admin_bar' => true,
+            'menu_position' => 2,
+            'can_export' => true,
+            'exclude_from_search' => false,
+            'publicly_queryable' => true,
+            'taxonomies' => ['type'],
+            'hierarchical' => true,
+            'supports' => ['title', 'editor', 'thumbnail', 'page-attributes']
+        ]
     );
 }
+
 // Hooking up our function to theme setup
-add_action( 'init', 'create_posttype' );
+add_action('init', 'create_posttype');
+
+//Register sidebar
+register_sidebar(array(
+    'name' => 'Левое меню',
+    'id' => "left-sidebar",
+    'description' => 'Левая колонка',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>\n",
+    'before_title' => '<span class="widgettitle">',
+    'after_title' => "</span>\n",
+));
 
 //Shordcodes
-function true_add_mce_button() {
+function true_add_mce_button()
+{
     // проверяем права пользователя - может ли он редактировать посты и страницы
-    if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) {
         return; // если не может, то и кнопка ему не понадобится, в этом случае выходим из функции
     }
     // проверяем, включен ли визуальный редактор у пользователя в настройках (если нет, то и кнопку подключать незачем)
-    if ( 'true' == get_user_option( 'rich_editing' ) ) {
-        add_filter( 'mce_external_plugins', 'true_add_tinymce_script' );
-        add_filter( 'mce_buttons', 'true_register_mce_button' );
+    if ('true' == get_user_option('rich_editing')) {
+        add_filter('mce_external_plugins', 'true_add_tinymce_script');
+        add_filter('mce_buttons', 'true_register_mce_button');
     }
 }
+
 add_action('admin_head', 'true_add_mce_button');
 
 // В этом функции указываем ссылку на JavaScript-файл кнопки
-function true_add_tinymce_script( $plugin_array ) {
-    $plugin_array['card_simple_button'] = get_stylesheet_directory_uri() .'/shortcode/true_button.js'; // card_button - идентификатор кнопки
+function true_add_tinymce_script($plugin_array)
+{
+    $plugin_array['card_simple_button'] = get_stylesheet_directory_uri() . '/shortcode/card-simple.js'; // card_simple_button - идентификатор кнопки
+    $plugin_array['card_full_bg_button'] = get_stylesheet_directory_uri() . '/shortcode/card-full-bg.js';
+    $plugin_array['card_vertical_img_button'] = get_stylesheet_directory_uri() . '/shortcode/card-vertical-img.js';
     return $plugin_array;
 }
 
 // Регистрируем кнопку в редакторе
-function true_register_mce_button( $buttons ) {
-    array_push( $buttons, 'card_simple_button' ); // card_button - идентификатор кнопки
+function true_register_mce_button($buttons)
+{
+    array_push($buttons, 'card_simple_button'); // card_simple_button - идентификатор кнопки
+    array_push($buttons, 'card_full_bg_button');
+    array_push($buttons, 'card_vertical_img_button');
     return $buttons;
 }
 
-//Shortcode Card
+//Shortcode Card-Simple
 function render_card_simple($atts, $content)
 {
-    extract(shortcode_atts(['title' => '', 'link' => ''], $atts));
+    extract(shortcode_atts(['title' => '', 'icon' => '', 'link' => ''], $atts));
 
     $content = sprintf('<div class="col-md-4"><a href="%s" class="card__link"><div class="card card-simple"><div class="card-simple__icon"><img src="%s"></div><p>%s</p></div></a></div>', $link, $icon, $content);
+
+    return force_balance_tags($content);
+}
+
+//Shortcode Card-Full-Bg
+function render_card_full_bg($atts, $content)
+{
+    extract(shortcode_atts(['title' => '', 'icon' => '', 'link' => ''], $atts));
+
+    $content = sprintf('<div class="col-md-4"><a href="%s" class="card__link"><div class="card card-full-bg"><img src="%s" alt=""><p class="card-full-bg__text">%s</p></div></a></div>', $link, $icon, $content);
+
+    return force_balance_tags($content);
+}
+
+//Shortcode Card-Vertical-Img
+function render_card_vertical_img($atts, $content)
+{
+    extract(shortcode_atts(['title' => '', 'icon' => '', 'background' => '' , 'link' => ''], $atts));
+
+    $content = sprintf('<div class="col-md-4"><a href="%s" class="card__link"><div class="card card-vertical-img"><div class="card__img"><img src="%s" alt=""><div class="icon-box"><img class="icon" src="%s" alt=""></div></div><div class="card-vertical-img__text"><div class="card__title" >%s</div><p>%s</p><a href="%s" class="card-vertical-img__link">Подробнее</a></div></div></a></div>', $link, $background, $icon, $title, $content, $link);
 
     return force_balance_tags($content);
 }
@@ -134,5 +186,7 @@ function render_row($atts, $content)
     return force_balance_tags(sprintf('<div class="row %s">%s</div>', $class, do_shortcode($content)));
 }
 
-add_shortcode('card', 'render_card_simple');
+add_shortcode('card-simple', 'render_card_simple');
+add_shortcode('card-full-bg', 'render_card_full_bg');
+add_shortcode('card-vertical-img', 'render_card_vertical_img');
 add_shortcode('row', 'render_row');

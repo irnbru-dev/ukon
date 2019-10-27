@@ -19,7 +19,8 @@ const autoprefix = new LessPluginAutoPrefix({browsers: ['last 20 versions', 'ie 
 const path = {
     src: {
         less: 'src/less/style.less',
-        js: 'src/js/script.js'
+        js: 'src/js/script.js',
+        shortcode: 'src/js/shortcode/shortcode.js'
     },
     watch: {
         js: 'src/js/**/*.js',
@@ -27,7 +28,8 @@ const path = {
     },
     dist: {
         js: 'wp-content/themes/ukon/js/',
-        css: 'wp-content/themes/ukon/css/'
+        css: 'wp-content/themes/ukon/css/',
+        shortcode: 'wp-content/themes/ukon/shortcode/'
     }
 };
 
@@ -44,6 +46,13 @@ gulp.task('js', () => {
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(path.dist.js))
+});
+
+gulp.task('shortcode', function () {
+    return gulp.src(path.src.shortcode)
+        .pipe(concat('shortcode.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.dist.shortcode))
 });
 
 gulp.task('less', () => {

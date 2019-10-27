@@ -6,23 +6,21 @@
             <a href="#" class="btn">Консультация</a>
         </div>
 
-        <div class="question__img">
-            <img src="" alt="">
-        </div>
     </div>
 </section>
 
 <footer class="footer">
     <div class="container">
         <div class="footer__info">
-            <div class="copyright">2014 -2019</div>
+            <div class="copyright">2014 - <?= date('Y'); ?></div>
             <div class="policy">
-                <a href="#" class="link">Политика конфиденциальности</a>
+                <a href="/policy/" class="link"><?= get_field('privacy_policy', 125)['text']; ?></a>
             </div>
         </div>
     </div>
 </footer>
 
+<script src="/src/js/shortcode/shortcode.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

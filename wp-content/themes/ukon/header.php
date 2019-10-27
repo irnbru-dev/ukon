@@ -20,23 +20,23 @@
             <div class="address">
                 <a href="#">
                     <img src="/wp-content/themes/ukon/img/point.png" alt="" class="icon">
-                    Шпалерная улица, дом 40а офис 301
+                    <?= get_field('contacts_address', 107)?>
                 </a>
             </div>
 
             <div class="mail">
                 <a href="#">
                     <img src="/wp-content/themes/ukon/img/mail.png" alt="" class="icon">
-                    kadastr@ukon-plus.ru
+                    <?= get_field('contacts_email', 107)?>
                 </a>
             </div>
 
             <div class="tel">
                 <a href="#">
                     <img src="/wp-content/themes/ukon/img/tel.png" alt="" class="icon">
-                    +7 812 449-47-15
+                    <?= get_field('contacts_tel', 107)?>
                 </a>
-                <a href="#" class="link">Обратный звонок</a>
+                <a href="<?= get_field('contacts_callback', 125)['link']?>" class="link"><?= get_field('contacts_callback', 107)['text']?></a>
             </div>
 
             <div class="search">
@@ -51,9 +51,9 @@
             <div class="header__main-wrap">
                 <div class="logo">
                     <a href="#">
-                        <img src="/wp-content/themes/ukon/img/svg/logo-white.svg" alt="">
+                        <img src="<?= get_field('header', 125)['logo']; ?>" alt="">
                     </a>
-                    <p>Кадастровая деятельность любой сложности</p>
+                    <p><?= get_field('header', 125)['text']; ?></p>
                 </div>
 
 
