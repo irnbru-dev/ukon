@@ -56,7 +56,6 @@
                     <p><?= get_field('header', 125)['text']; ?></p>
                 </div>
 
-
                 <nav class="main-nav">
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                             data-target="menu-main-container">
@@ -67,84 +66,6 @@
 
                     <?php wp_nav_menu(); ?>
                 </nav>
-                <!--                <nav class="navbar navbar-expand-lg main-nav">-->
-                <!--                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">-->
-                <!--                        <span class="navbar-toggler-icon"></span>-->
-                <!--                        <span class="navbar-toggler-icon"></span>-->
-                <!--                        <span class="navbar-toggler-icon"></span>-->
-                <!--                    </button>-->
-                <!--                    <div class="collapse navbar-collapse" id="mainNav">-->
-                <!--                        <ul class="navbar-nav">-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Услуги-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Решения-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Статьи-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Новости и акции-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Клиенты-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                            <li class="nav-item dropdown">-->
-                <!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
-                <!--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                                    Компания-->
-                <!--                                </a>-->
-                <!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-                <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                                </div>-->
-                <!--                            </li>-->
-                <!--                        </ul>-->
-                <!--                    </div>-->
-                <!--                </nav>-->
-
             </div>
         </div>
     </div>
