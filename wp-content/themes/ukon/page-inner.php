@@ -1,7 +1,8 @@
 <?php /* Template Name: Внутренняя страница */
 get_header(); ?>
 
-<?php if (have_posts()) while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) while (have_posts()) :
+    the_post(); ?>
 
 
     <div class="page">
@@ -9,31 +10,34 @@ get_header(); ?>
             <div class="page-wrap">
 
                 <aside class="left-menu">
-                    <div class="left-menu__title">Услуги</div>
-                    <ul class="left-menu__list">
-                        <li class="left-menu__list-item dropdown">
-                            <a href="#sublist" class="left-menu__list-link" data-toggle="collapse">Кадастровые
-                                работы</a>
+                    <?php
 
-                            <ul class="left-menu__sublist collapse" id="sublist">
-                                <li><a href="#">Технический план</a></li>
-                                <li><a href="#">Межевой план</a></li>
-                                <li><a href="#">Акт обследования</a></li>
-                            </ul>
-                        </li>
-                        <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">Техническая
-                                инвентаризация</a></li>
-                        <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">Документы
-                                ввода
-                                объектов недвижимости в эксплуатацию</a></li>
-                        <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">проект
-                                перепланировки</a></li>
+                    if ($post->post_parent) {
+                        $ancestors = get_post_ancestors($post->ID);
+                        $root = count($ancestors) - 1;
+                        $parent = $ancestors[$root];
+                    } else {
+                        $parent = $post->ID;
+                    }
+
+                    ?>
+                    <a href="<?php get_post_permalink($parent); ?>" class="left-menu__title"><?= get_the_title($parent); ?></a>
+
+                    <ul class="left-menu__list">
+                        <?php wp_list_pages(array(
+                            'child_of' => $parent,
+                            'depth' => 2,
+                            'sort_order' => 'asc',
+                            'title_li' => ''
+                        )); ?>
                     </ul>
+
                 </aside>
-s
+
                 <div class="content">
 
-                    <div class="banner" style="background-image: url(<?= get_field('page_inner_banner')['background']; ?>);">
+                    <div class="banner"
+                         style="background-image: url(<?= get_field('page_inner_banner')['background']; ?>);">
                         <div class="banner__text">
                             <h1 class="banner__title"><?= get_field('page_inner_banner')['title'] ? get_field('page_inner_banner')['title'] : the_title() ?></h1>
 

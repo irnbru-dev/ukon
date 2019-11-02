@@ -3,9 +3,25 @@
   background-size: 100% 100%;
   background-color: @blue;
   color: @white;
-  padding: 80px 70px;
+  padding: 30px 25px;
   width: 100%;
   margin-bottom: 60px;
+
+  @media @view-tablet {
+    padding: 55px 50px;
+  }
+
+  @media @view-desktop {
+    padding: 80px 70px;
+  }
+
+  &__title {
+    font-size: 26px;
+
+    @media @view-desktop {
+      font-size: 36px;
+    }
+  }
 
   &__text {
     max-width: 300px;
@@ -17,5 +33,10 @@
 
   .btn {
     margin-top: 25px;
+    width: 100%;
+
+    @media @view-mobile {
+      width: auto;
+    }
   }
 }

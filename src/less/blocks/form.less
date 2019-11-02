@@ -1,7 +1,11 @@
 .form {
   background: @blue;
-  padding: 50px 20px 50px 40px;
+  padding: 40px 30px;
   text-align: center;
+
+  @media @view-tablet {
+    padding: 50px 20px 50px 40px;
+  }
 
   h2 {
     color: @white;
@@ -24,11 +28,22 @@
   textarea {
     width: 100%;
     padding: 10px 15px;
-    margin-left: -40px;
+    margin-top: 10px;
     height: 100%;
+
+    @media @view-tablet {
+      margin-left: -40px;
+      margin-top: 0;
+    }
   }
 
   .btn {
-    margin-top: 15px;
+    margin-top: 40px;
+    width: 100%;
+
+    @media @view-tablet {
+      width: auto;
+      margin-top: 15px;
+    }
   }
 }

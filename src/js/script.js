@@ -5,6 +5,13 @@ $('.navbar-toggler').on('click', function () {
     $('.menu-main-container').toggleClass('show');
 });
 
+
+$('.page_item_has_children > a').on('click', function (e) {
+    e.preventDefault();
+
+    $(this).next('.children').collapse("toggle");
+});
+
 $(function () {
     $(".owl-projects").owlCarousel({
         loop: true,
@@ -63,20 +70,20 @@ $(function () {
         }
     });
 
-    $('[data-toggle="expand"]').on('click', function (e) {
-        e.preventDefault();
-
-        let $target = $(e.target);
-        // TODO: refactor
-        if ($target.hasClass('btn')) {
-            window.location.href = $target.attr('href');
-        } else {
-            $(this).next().stop().slideToggle(100, function () {
-                if ($(this).is(':visible'))
-                    $(this).css('display', 'flex');
-            }).parent().toggleClass('active');
-        }
-    });
+    // $('[data-toggle="expand"]').on('click', function (e) {
+    //     e.preventDefault();
+    //
+    //     let $target = $(e.target);
+    //     // TODO: refactor
+    //     if ($target.hasClass('btn')) {
+    //         window.location.href = $target.attr('href');
+    //     } else {
+    //         $(this).next().stop().slideToggle(100, function () {
+    //             if ($(this).is(':visible'))
+    //                 $(this).css('display', 'flex');
+    //         }).parent().toggleClass('active');
+    //     }
+    // });
 
 });
 

@@ -1,72 +1,106 @@
 .left-menu {
   width: 370px;
   flex-shrink: 0;
+  display: none;
+
+  @media @view-desktop {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__title {
     font-size: 18px;
     font-weight: 500;
+    color: @gray;
     margin-bottom: 15px;
+
+    &:hover, &:active, &:visited {
+      color: @gray;
+      text-decoration: none;
+    }
   }
 
   &__list {
     width: 270px;
-  }
 
-  &__list-item {
-
-    a {
-      position: relative;
-      background: transparent;
-      display: block;
-      border: 1px solid #dadee4;
-      padding: 15px 20px;
-      transition: background .2s ease-in-out, color .2s ease-in-out, border .2s ease-in-out;
-      color: @gray;
-
-      &:hover, &[aria-expanded="true"] {
-        background: @blue!important;
-        border-color: @blue;
-        cursor: pointer;
-        color: @white;
-        text-decoration: none;
-      }
-    }
-
-    &.dropdown > a {
+    .children {
+      margin-top: -15px;
       margin-bottom: 15px;
-      background: @white;
-      padding-right: 30px;
 
-      &:before {
-        position: absolute;
-        content: '';
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 5px;
-        background: @blue;
-        transition: background .2s ease-in-out
-      }
-      
-      &:after {
-        position: absolute;
-        content: '';
-        background: url("../img/svg/arrow-d.svg") no-repeat;
-        right: 13px;
-        top: 23px;
-        width: 10px;
-        height: 10px;
+      &:not(.collapse):not(.collapsing) {
+        display: none;
       }
 
-      &:hover {
-        background: @blue;
-        border-color: @blue;
+      .page_item {
+
+        a {
+          background: transparent;
+          border: 1px solid #dadee4;
+        }
       }
     }
-  }
 
-  &__sublist {
-    margin-top: -15px;
-    margin-bottom: 15px;
+    .page_item {
+
+      a {
+        position: relative;
+
+        display: block;
+
+        padding: 15px 20px;
+        transition: background .2s ease-in-out, color .2s ease-in-out, border .2s ease-in-out;
+        color: @gray;
+
+        &:hover, &[aria-expanded="true"] {
+          background: @blue !important;
+          border-color: @blue;
+          cursor: pointer;
+          color: @white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    & > li > a {
+      margin-bottom: 15px;
+    }
+
+    & > .page_item {
+
+      a {
+        background: @white;
+      }
+
+      &_has_children > a {
+
+        padding-right: 30px;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 5px;
+          background: @blue;
+          transition: background .2s ease-in-out
+        }
+
+        &:after {
+          position: absolute;
+          content: '';
+          background: url("../img/svg/arrow-d.svg") no-repeat;
+          right: 13px;
+          top: 23px;
+          width: 10px;
+          height: 10px;
+        }
+
+        &:hover {
+          background: @blue;
+          border-color: @blue;
+        }
+      }
+    }
   }
 }

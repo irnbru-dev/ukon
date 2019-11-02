@@ -171,7 +171,7 @@ function render_card_full_bg($atts, $content)
 //Shortcode Card-Vertical-Img
 function render_card_vertical_img($atts, $content)
 {
-    extract(shortcode_atts(['title' => '', 'icon' => '', 'background' => '' , 'link' => ''], $atts));
+    extract(shortcode_atts(['title' => '', 'icon' => '', 'background' => '', 'link' => ''], $atts));
 
     $content = sprintf('<div class="col-md-4"><a href="%s" class="card__link"><div class="card card-vertical-img"><div class="card__img"><img src="%s" alt=""><div class="icon-box"><img class="icon" src="%s" alt=""></div></div><div class="card-vertical-img__text"><div class="card__title" >%s</div><p>%s</p><a href="%s" class="card-vertical-img__link">Подробнее</a></div></div></a></div>', $link, $background, $icon, $title, $content, $link);
 
