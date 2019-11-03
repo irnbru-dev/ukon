@@ -1,0 +1,59 @@
+.modal {
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  &-content {
+    padding: 30px 25px;
+
+    @media @view-tablet {
+      padding: 40px;
+    }
+  }
+
+
+  &-header,
+  &-body,
+  &-footer {
+    border: none;
+    transition: opacity .2s ease-out;
+
+    &.success {
+      opacity: 0;
+    }
+  }
+
+  button.close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    background: @blue;
+    padding: 7px 10px;
+    opacity: 1;
+
+    font-weight: 400;
+    color: @white;
+    text-shadow: none;
+    transition: background .2s ease-in-out;
+
+    @media @view-desktop {
+      &:hover {
+        background: lighten(@blue, 10%);
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
+
+    @media @view-mobile {
+      width: auto;
+    }
+  }
+
+  .response-message {
+    text-align: center;
+    padding: 40px;
+  }
+}

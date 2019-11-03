@@ -21,7 +21,8 @@ get_header(); ?>
                     }
 
                     ?>
-                    <a href="<?php get_post_permalink($parent); ?>" class="left-menu__title"><?= get_the_title($parent); ?></a>
+                    <a href="<?php get_post_permalink($parent); ?>"
+                       class="left-menu__title"><?= get_the_title($parent); ?></a>
 
                     <ul class="left-menu__list">
                         <?php wp_list_pages(array(
@@ -44,7 +45,9 @@ get_header(); ?>
                             <?php if (get_field('page_inner_banner')['subtitle']) : ?>
                                 <p><?= get_field('page_inner_banner')['subtitle'] ?></p>
                             <?php endif; ?>
-                            <a href="#" class="btn">Отправить запрос</a>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Отправить
+                                запрос
+                            </button>
                         </div>
                     </div>
 
@@ -52,21 +55,11 @@ get_header(); ?>
 
                     <div class="form">
                         <h2 class="-center">Оставить заявку</h2>
-
-                        <form action="">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input placeholder="ФИО">
-                                    <input placeholder="+7 (000) 000 00 00">
-                                    <input placeholder="E-mail">
-                                </div>
-                                <div class="col-md-7">
-                                    <textarea name="" id="" cols="30" placeholder="Опишите вашу задачу"></textarea>
-                                </div>
-                            </div>
-
-                            <button class="btn">Отправить</button>
-                        </form>
+                        <?php echo do_shortcode('[contact-form-7 id="270" title="Оставить заявку"]') ?>
+                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
                     </div>
 
                 </div>

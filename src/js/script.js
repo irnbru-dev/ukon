@@ -12,6 +12,35 @@ $('.page_item_has_children > a').on('click', function (e) {
     $(this).next('.children').collapse("toggle");
 });
 
+//contact form 7
+document.addEventListener('wpcf7mailsent', function () {
+
+    console.log('SEND')
+
+    var $modal = $('.modal'),
+        $modalParts = $modal.find('.modal-header,.modal-body,.modal-footer'),
+        $responseMsg = $('.response-info').data('response-title'),
+        $responseMsgSub = $('.response-info').data('response-subtitle');
+
+    $modalParts.addClass('success');
+
+    setTimeout(function () {
+        $modalParts.hide(300);
+        $modal
+            .find('.modal-content')
+            .append('<div class="response-message"><h2>' + $responseMsg + '</h2><p>' + $responseMsgSub + '</p></div>')
+
+    }, 300);
+
+    $modal.on('hidden.bs.modal', function () {
+        $modalParts.removeClass('success');
+        $modalParts.show();
+        $('.response-message').remove();
+    });
+}, false);
+
+
+//owl
 $(function () {
     $(".owl-projects").owlCarousel({
         loop: true,

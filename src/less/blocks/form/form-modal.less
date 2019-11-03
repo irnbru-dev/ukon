@@ -1,0 +1,34 @@
+.form-modal {
+
+  input:not(.btn), textarea {
+    width: 100%;
+    background: @blue-light;
+    border: 0;
+    padding: 13px 17px;
+    margin-bottom: 20px;
+  }
+
+
+  .btn {
+    margin-top: 20px;
+  }
+
+}
+
+.response-message {
+  position: relative;
+  opacity: 0;
+  animation: msg-reveal .2s ease-in .3s;
+  animation-fill-mode: forwards;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@keyframes msg-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
