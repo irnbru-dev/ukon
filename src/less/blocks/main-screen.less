@@ -2,13 +2,15 @@
   background-image: url('../img/light.png');
   background-repeat: no-repeat;
   background-size: cover;
-  //background-size: 130% 100%;
-  padding-top: 140px;
-  padding-bottom: 120px;
+  background-position: 6%;
+  padding-top: 100px;
+  padding-bottom: 100px;
   color: @white;
 
   @media @view-tablet {
     background-size: 130% 100%;
+    padding-top: 140px;
+    padding-bottom: 120px;
   }
 
   @media @view-desktop {
@@ -18,9 +20,14 @@
 
   &__info {
     max-width: 300px;
+    padding: 015px;
+
+    @media @view-tablet {
+      padding: 0;
+    }
 
     p {
-      font-size: 36px;
+      font-size: 30px;
       line-height: 1;
       font-weight: 700;
 
@@ -31,10 +38,14 @@
       &.-xl {
 
         span {
-          font-size: 120px;
+          font-size: 80px;
           font-weight: 700;
 
           @media @view-tablet {
+            font-size: 120px;
+          }
+
+          @media @view-desktop {
             font-size: 190px;
           }
         }
@@ -44,12 +55,25 @@
     ul {
       list-style: none;
       padding-left: 0;
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 40px;
+
+      @media @view-tablet {
+        font-size: 16px;
+      }
 
       li:not(:last-child) {
         margin-bottom: 10px;
       }
     }
+  }
+
+  &-articles {
+    color: @white;
+    padding: 130px 0 60px 0;
+
+    background-image: url('../img/articles-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

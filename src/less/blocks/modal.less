@@ -27,15 +27,21 @@
   button.close {
     position: absolute;
     top: 0;
-    right: -34px;
+    right: 0;
     background: @blue;
     padding: 7px 10px;
     opacity: 1;
+    border-radius: 0 3px 0 0;
 
     font-weight: 400;
     color: @white;
     text-shadow: none;
     transition: background .2s ease-in-out;
+
+    @media @view-tablet {
+      right: -35px;
+      border-radius: 0;
+    }
 
     @media @view-desktop {
       &:hover {

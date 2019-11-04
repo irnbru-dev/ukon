@@ -12,6 +12,19 @@ $('.page_item_has_children > a').on('click', function (e) {
     $(this).next('.children').collapse("toggle");
 });
 
+
+$(window).on('load resize', function () {
+    if ($(window).width() < 991) {
+        
+        $('.menu > .menu-item-has-children > a').on('click tap', function (e) {
+            e.preventDefault();
+
+            $(this).toggleClass('open').next('.sub-menu').collapse("toggle");
+        });
+    }
+});
+
+
 //contact form 7
 document.addEventListener('wpcf7mailsent', function () {
 

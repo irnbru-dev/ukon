@@ -5,26 +5,8 @@
         <div class="page-wrap">
 
             <aside class="left-menu">
-                <div class="left-menu__title">Услуги</div>
-                <ul class="left-menu__list">
-                    <li class="left-menu__list-item dropdown">
-                        <a href="#sublist" class="left-menu__list-link" data-toggle="collapse">Кадастровые
-                            работы</a>
 
-                        <ul class="left-menu__sublist collapse" id="sublist">
-                            <li><a href="#">Технический план</a></li>
-                            <li><a href="#">Межевой план</a></li>
-                            <li><a href="#">Акт обследования</a></li>
-                        </ul>
-                    </li>
-                    <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">Техническая
-                            инвентаризация</a></li>
-                    <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">Документы
-                            ввода
-                            объектов недвижимости в эксплуатацию</a></li>
-                    <li class="left-menu__list-item dropdown"><a href="#" class="left-menu__list-link">проект
-                            перепланировки</a></li>
-                </ul>
+
             </aside>
 
             <div class="content">

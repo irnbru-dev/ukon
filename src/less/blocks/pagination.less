@@ -1,0 +1,50 @@
+.page-numbers {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: @gray;
+      padding: 7px 16px;
+      font-weight: 700;
+      margin-right: 10px;
+      display: inline-block;
+      transition: background .15s ease-in-out;
+
+      &:hover {
+        background: #e0eaf0;
+      }
+    }
+
+    .page-numbers {
+
+      &.current {
+        padding: 7px 16px;
+        background: #e0eaf0;
+        font-weight: 700;
+        color: @blue;
+        margin-right: 10px;
+      }
+
+      &.prev, &.next {
+        background-image: url('../img/svg/arrow-r-gray.svg');
+        background-repeat: no-repeat;
+        transition: background .2s ease-in-out;
+
+        &:hover {
+          background: transparent;
+          background-image: url('../img/svg/arrow-r.svg');
+          background-repeat: no-repeat;
+        }
+      }
+
+      &.prev {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

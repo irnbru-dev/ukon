@@ -54,6 +54,67 @@ add_action('wp_enqueue_scripts', 'ukon_scripts');
 
 
 add_action('after_setup_theme', 'customEditorStyles');
+
+add_filter( 'the_content_more_link', '__return_empty_string' );
+
+add_theme_support( 'post-thumbnails' );
+
+/* Функция для выбора шаблона записи по категории */
+define(SINGLE_PATH, TEMPLATEPATH . '/single');
+add_filter('single_template', 'my_single_template');
+function my_single_template($single)
+{
+    global $wp_query, $post;
+    foreach ((array)get_the_category() as $cat) :
+
+        if (file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php')) {
+            return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
+        } elseif (file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php')) {
+            return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
+        }
+
+    endforeach;
+    $wp_query->in_the_loop = true;
+    foreach ((array)get_the_tags() as $tag) :
+
+        if (file_exists(SINGLE_PATH . '/single-tag-' . $tag->slug . '.php')) {
+            return SINGLE_PATH . '/single-tag-' . $tag->slug . '.php';
+        } elseif (file_exists(SINGLE_PATH . '/single-tag-' . $tag->term_id . '.php')) {
+            return SINGLE_PATH . '/single-tag-' . $tag->term_id . '.php';
+        }
+
+    endforeach;
+    $wp_query->in_the_loop = false;
+
+    if (file_exists(SINGLE_PATH . '/single.php')) {
+        return SINGLE_PATH . '/single.php';
+    }
+
+    return $single;
+}
+
+function pagination()
+{
+    global $wp_query;
+    $big = 999999999;
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'type' => 'list',
+        'prev_text' => '',
+        'next_text' => '',
+        'total' => $wp_query->max_num_pages,
+        'show_all' => false,
+        'end_size' => 15,
+        'mid_size' => 15,
+        'add_args' => false,
+        'add_fragment' => '',
+        'before_page_number' => '',
+        'after_page_number' => ''
+    ));
+}
+
 function customEditorStyles()
 {
     add_editor_style('admin-styles.css');
@@ -69,12 +130,15 @@ function wpcf7_autop_return_false() {
 /**
  * Add custom menu
  */
-function wpb_custom_new_menu()
-{
-    register_nav_menu('my-custom-menu', __('My Custom Menu'));
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'my-custom-menu' => __( 'My Custom Menu' ),
+            'company-menu' => __( 'Company Menu' )
+        )
+    );
 }
-
-add_action('init', 'wpb_custom_new_menu');
+add_action( 'init', 'register_my_menus' );
 
 /**
  * Registers custom post types and taxonomies

@@ -46,11 +46,11 @@
         </div>
     </div>
 
-    <div class="header__main <?php if (is_front_page()): ?> header__main-page <?php endif; ?>">
+    <div class="header__main <?php if (is_front_page() || (is_category('articles'))): ?> header__main-page <?php endif; ?>">
         <div class="container">
             <div class="header__main-wrap">
                 <div class="logo">
-                    <a href="#">
+                    <a href="/">
                         <img src="<?= get_field('header', 125)['logo']; ?>" alt="">
                     </a>
                     <p><?= get_field('header', 125)['text']; ?></p>
