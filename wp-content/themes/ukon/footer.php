@@ -59,7 +59,7 @@
                     <?php if (get_field('question_form', 266)) {?>
                         <?= get_field('question_form', 266)?>
                     <?php } ?>
-                    <div class="response-info hidden" data-response-title="Заявка принята" data-response-subtitle="blabla"></div>
+                    <div class="response-info hidden" data-response-title="Заявка принята" data-response-subtitle=""></div>
                 </div>
 
             </div>

@@ -8,7 +8,7 @@ get_header(); ?>
                 <p><?= get_field('page_main_main_screen')['text'] ?></p>
                 <p class="-xl"><?= get_field('page_main_main_screen')['sale'] ?></p>
                 <?= get_field('page_main_main_screen')['list'] ?>
-                <a href="#" class="btn">Узнать больше</a>
+                <a href="<?= get_field('page_main_main_screen')['btn_link'] ?>" class="btn"><?= get_field('page_main_main_screen')['btn_text'] ?></a>
             </div>
 
         </div>
