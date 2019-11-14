@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ukon</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <?php wp_head(); ?>
 </head>
 <body>
@@ -24,24 +29,19 @@
                 </a>
             </div>
 
+            <div class="tel">
+                <a href="tel:<?= get_field('contacts_tel', 107)?>">
+                    <img src="/wp-content/themes/ukon/img/tel.png" alt="" class="icon">
+                    <b><?= get_field('contacts_tel', 107)?></b>
+                </a>
+                <button type="button" class="link ml-2" data-toggle="modal" data-target="#questionModal"><?= get_field('contacts_callback', 107)['text']?></button>
+            </div>
+
             <div class="mail">
-                <a href="#">
+                <a href="mailto:<?= get_field('contacts_email', 107)?>">
                     <img src="/wp-content/themes/ukon/img/mail.png" alt="" class="icon">
                     <?= get_field('contacts_email', 107)?>
                 </a>
-            </div>
-
-            <div class="tel">
-                <a href="#">
-                    <img src="/wp-content/themes/ukon/img/tel.png" alt="" class="icon">
-                    <?= get_field('contacts_tel', 107)?>
-                </a>
-                <a href="<?= get_field('contacts_callback', 125)['link']?>" class="link"><?= get_field('contacts_callback', 107)['text']?></a>
-            </div>
-
-            <div class="search">
-                поиск
-                <img src="/wp-content/themes/ukon/img/search.png" alt="" class="icon">
             </div>
         </div>
     </div>

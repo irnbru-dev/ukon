@@ -13,14 +13,20 @@
             <aside class="right-aside">
 
                 <div class="aside-banner">
-                    <form action="">
-                        <input placeholder="ФИО">
-                        <input type="tel" placeholder="+7(000)000-00-00">
-
-                        <input type="submit" class="btn" value="Отправить">
-                    </form>
+                    <div class="form-banner">
+                        <img src="" alt="" class="form-banner__icon">
+                        <p class="form-banner__title">Подписаться</p>
+                        <?php echo do_shortcode('[contact-form-7 id="299" title="Подписаться"]')?>
+                    </div>
                 </div>
 
+                <div class="aside-banner">
+                    <div class="form-banner">
+                        <img src="" alt="" class="form-banner__icon">
+                        <p class="form-banner__title">Задать вопрос</p>
+                        <?php echo do_shortcode('[contact-form-7 id="300" title="Задать вопрос"]')?>
+                    </div>
+                </div>
 
             </aside>
 

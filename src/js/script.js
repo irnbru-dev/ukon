@@ -41,7 +41,7 @@ document.addEventListener('wpcf7mailsent', function () {
         $modalParts.hide(300);
         $modal
             .find('.modal-content')
-            .append('<div class="response-message"><h2>' + $responseMsg + '</h2><p>' + $responseMsgSub + '</p></div>')
+            .append('<div class="response-message"><h2>' + $responseMsg + '</h2><p>' + $responseMsgSub + '</p><div class="response-message__icon"><img src="/wp-content/themes/ukon/img/svg/email.svg" alt=""></div></div>')
 
     }, 300);
 

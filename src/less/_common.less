@@ -39,6 +39,7 @@ ol {
 a.link {
   color: @blue;
   border-bottom: 1px dashed @blue;
+  transition: border .15s ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -53,6 +54,25 @@ a.link {
       text-decoration: none;
       border: none;
     }
+  }
+}
+
+button.link {
+  box-shadow: none;
+  background: transparent;
+  color: @blue;
+  border: 0;
+  border-bottom: 1px dashed;
+  border-color:  @blue;
+  padding: 0;
+  outline: none;
+  transition: border .15s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
   }
 }
 

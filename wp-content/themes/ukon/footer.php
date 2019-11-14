@@ -35,7 +35,9 @@
                     <?php if (get_field('page_inner_banner')['form']) {?>
                         <?= get_field('page_inner_banner')['form']?>
                     <?php } ?>
-                    <div class="response-info hidden" data-response-title="Заявка принята" data-response-subtitle="blabla"></div>
+                    <div class="response-info hidden" data-response-title="Ваш запрос принят!" data-response-subtitle="Мы с вами свяжемся в ближайшее время">
+                        <img src="./img/svg/email.svg" alt="">
+                    </div>
                 </div>
 
             </div>
@@ -55,11 +57,13 @@
             <div class="modal-body">
 
                 <div class="form-modal">
-                    <h2 class="form-title">Задать вопрос</h2>
+                    <h2 class="form-title">Обратный звонок</h2>
                     <?php if (get_field('question_form', 266)) {?>
                         <?= get_field('question_form', 266)?>
                     <?php } ?>
-                    <div class="response-info hidden" data-response-title="Заявка принята" data-response-subtitle=""></div>
+                    <div class="response-info hidden" data-response-title="Ваш запрос принят!" data-response-subtitle="Мы с Вами свяжемся в ближайшее время.">
+                        <img src="./img/svg/email.svg" alt="">
+                    </div>
                 </div>
 
             </div>
