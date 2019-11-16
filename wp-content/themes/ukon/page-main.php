@@ -21,7 +21,7 @@ get_header(); ?>
                 <?php if (get_field('page_main_services')): ?>
                     <?php while (has_sub_field('page_main_services')): ?>
                         <div class="col-md-6 col-lg-4">
-                            <a href="#" class="card__link">
+                            <a href="<?= the_sub_field('link'); ?>" class="card__link">
                                 <div class="card card--brown card--xl">
                                     <div class="card__icon"><img src="<?= the_sub_field('icon'); ?>" alt=""></div>
                                     <div class="card__title"><?= the_sub_field('title'); ?></div>
@@ -39,7 +39,7 @@ get_header(); ?>
                 <?php if (get_field('page_main_solutions')): ?>
                     <?php while (has_sub_field('page_main_solutions')): ?>
                         <div class="col-md-4">
-                            <a href="#" class="card__link">
+                            <a href="<?= the_sub_field('link'); ?>" class="card__link">
                                 <div class="card card--sm card--blue">
                                     <div class="card__icon"><img src="<?= the_sub_field('icon'); ?>" alt=""></div>
                                     <p><?= the_sub_field('text'); ?></p>
@@ -74,7 +74,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="section section--blue-bg">
+    <div class="section section--blue-bg advantages">
         <div class="container">
             <h2 class="-center"><?= get_field('page_main_advantages_title'); ?></h2>
 
@@ -153,8 +153,8 @@ get_header(); ?>
             <h2 class="-center"><?= get_field('page_main_clients_title'); ?></h2>
             <div class="clients-owl owl-carousel">
 
-                <?php if (get_field('page_main_promo')): ?>
-                    <?php while (has_sub_field('page_main_promo')): ?>
+                <?php if (get_field('page_main_clients')): ?>
+                    <?php while (has_sub_field('page_main_clients')): ?>
                         <div class="clients__item">
                             <img src="<?= the_sub_field('image'); ?>" alt="">
                         </div>
@@ -169,8 +169,8 @@ get_header(); ?>
             <h2 class="-center"><?= get_field('page_main_reviews_title'); ?></h2>
             <div class="reviews-owl owl-carousel">
 
-                <?php if (get_field('page_main_promo')): ?>
-                    <?php while (has_sub_field('page_main_promo')): ?>
+                <?php if (get_field('page_main_reviews')): ?>
+                    <?php while (has_sub_field('page_main_reviews')): ?>
                         <div class="item">
                             <img src="<?= the_sub_field('image'); ?>" alt="">
                         </div>

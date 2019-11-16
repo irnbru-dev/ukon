@@ -12,6 +12,11 @@
     }
   }
 
+  .menu > li > a {
+    background: @white;
+    margin-bottom: 15px;
+  }
+
   &__list {
     width: 270px;
 
@@ -23,7 +28,7 @@
         display: none;
       }
 
-      .page_item {
+      .page_item, .menu-item {
 
         a {
           background: transparent;
@@ -32,7 +37,7 @@
       }
     }
 
-    .page_item {
+    .page_item, .menu-item {
 
       a {
         position: relative;
@@ -57,7 +62,7 @@
       margin-bottom: 15px;
     }
 
-    & > .page_item {
+    & > .page_item, & > .menu-item {
 
       a {
         background: @white;

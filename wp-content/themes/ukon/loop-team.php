@@ -1,4 +1,4 @@
-<a href="<?= get_the_permalink(); ?>" class="card__link">
+<!--<a href="--><?//= get_the_permalink(); ?><!--" class="card__link">-->
     <div class="card card-team">
         <div class="card-team__img">
             <img src="" alt="">
@@ -11,4 +11,4 @@
             <a href="#" class="card-team__link"><?= get_field('team_link'); ?></a>
         </div>
     </div>
-</a>
+<!--</a>-->

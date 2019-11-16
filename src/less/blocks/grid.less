@@ -3,6 +3,28 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+  position: relative;
+
+  &:after {
+
+    @media @view-tablet {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -100px;
+      height: 150px;
+      width: 326px;
+
+      background: url('/wp-content/themes/ukon/img/book.png');
+    }
+
+    @media @view-desktop {
+      bottom: -120px;
+      right: -100px;
+      height: 300px;
+    }
+  }
+
   &__item {
     width: 50%;
     color: @white;

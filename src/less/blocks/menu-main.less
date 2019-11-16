@@ -76,6 +76,7 @@
         }
 
         @media @view-desktop {
+          visibility: hidden;
           opacity: 0;
           transform: translateY(15px);
           transition: transform .2s ease-in-out;
@@ -131,7 +132,20 @@
             .sub-menu {
               opacity: 1;
               transform: translateY(0);
+              visibility: visible;
             }
+          }
+        }
+      }
+
+      & .--wide-menu {
+        & > .sub-menu {
+          flex-direction: row!important;
+          flex-wrap: wrap;
+          width: 700px;
+
+          & > .menu-item {
+            width: 50%;
           }
         }
       }

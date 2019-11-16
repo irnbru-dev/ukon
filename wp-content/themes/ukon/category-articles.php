@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="main-screen-articles">
+    <div class="main-screen-inner -articles">
         <div class="container">
 
             <div class="row">

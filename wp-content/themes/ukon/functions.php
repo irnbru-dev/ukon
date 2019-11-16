@@ -129,18 +129,25 @@ function wpcf7_autop_return_false() {
     return false;
 }
 
-/**
- * Add custom menu
- */
-function register_my_menus() {
-    register_nav_menus(
-        array(
-            'my-custom-menu' => __( 'My Custom Menu' ),
-            'company-menu' => __( 'Company Menu' )
-        )
-    );
-}
-add_action( 'init', 'register_my_menus' );
+///**
+// * Add custom menu
+// */
+//function register_my_menus() {
+//    register_nav_menus(
+//        array(
+//            'my-custom-menu' => __( 'My Custom Menu' ),
+//            'company-menu' => __( 'Company Menu' )
+//        )
+//    );
+//}
+//add_action( 'init', 'register_my_menus' );
+
+add_action( 'after_setup_theme', function(){
+    register_nav_menus( [
+        'main-menu' => 'Main Menu',
+        'company-menu' => 'Company Menu'
+    ] );
+} );
 
 /**
  * Registers custom post types and taxonomies

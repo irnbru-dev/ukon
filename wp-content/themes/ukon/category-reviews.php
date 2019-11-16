@@ -5,13 +5,19 @@
         <div class="page-wrap">
 
             <aside class="left-menu">
-
+                <a href="<?php get_post_permalink(284); ?>"
+                   class="left-menu__title">Компания</a>
+                <?php if( is_category('team') || is_object_in_taxonomy( $post, 'team' ) || is_category('reviews') || is_object_in_taxonomy( $post, 'reviews' ) ) { ?>
+                    <ul class="left-menu__list">
+                        <?php wp_nav_menu('company') ?>
+                    </ul>
+                <?php } ?>
 
             </aside>
 
             <div class="content">
 
-                <div class="banner">
+                <div class="banner" style="background-image: url(/wp-content/themes/ukon/img/otzovi_banner.jpg);">
                     <div class="banner__text">
                         <h1 class="banner__title"><?= single_cat_title() ?></h1>
                     </div>
@@ -23,21 +29,7 @@
 
                 <div class="form">
                     <h2 class="-center">Оставить заявку</h2>
-
-                    <form action="">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <input placeholder="ФИО">
-                                <input placeholder="+7 (000) 000 00 00">
-                                <input placeholder="E-mail">
-                            </div>
-                            <div class="col-md-7">
-                                <textarea name="" id="" cols="30" placeholder="Опишите вашу задачу"></textarea>
-                            </div>
-                        </div>
-
-                        <button class="btn">Отправить</button>
-                    </form>
+                    <?php echo do_shortcode('[contact-form-7 id="270" title="Оставить заявку"]') ?>
                 </div>
 
             </div>

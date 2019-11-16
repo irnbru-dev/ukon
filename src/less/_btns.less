@@ -19,5 +19,16 @@
       background: lighten(@blue, 10%);
     }
   }
+
+  &--bordered {
+    border: 1px solid @yellow;
+    background: transparent;
+    color: @yellow;
+
+    &:hover {
+      color: @white;
+      background: @yellow;
+    }
+  }
 }
 

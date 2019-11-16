@@ -24,15 +24,20 @@ get_header(); ?>
                     <a href="<?php get_post_permalink($parent); ?>"
                        class="left-menu__title"><?= get_the_title($parent); ?></a>
 
-                    <ul class="left-menu__list">
-                        <?php wp_list_pages(array(
-                            'child_of' => $parent,
-                            'depth' => 2,
-                            'sort_order' => 'asc',
-                            'title_li' => ''
-                        )); ?>
-                    </ul>
-
+                    <?php if ($parent == 284) { ?>
+                        <ul class="left-menu__list">
+                            <?php wp_nav_menu('company') ?>
+                        </ul>
+                    <?php } else { ?>
+                        <ul class="left-menu__list">
+                            <?php wp_list_pages(array(
+                                'child_of' => $parent,
+                                'depth' => 2,
+                                'sort_order' => 'asc',
+                                'title_li' => ''
+                            )); ?>
+                        </ul>
+                    <?php } ?>
                 </aside>
 
                 <div class="content">
