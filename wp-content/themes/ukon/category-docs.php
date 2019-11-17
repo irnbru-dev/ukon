@@ -15,12 +15,13 @@
     </div>
 
 
-    <section class="section">
+    <section class="section section--light-bg">
         <div class="container">
-
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php get_template_part('loop-docs'); ?>
-            <?php endwhile; else: echo '<h2>Нет записей.</h2>'; endif; ?>
+            <div class="row">
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <?php get_template_part('loop-docs'); ?>
+                <?php endwhile; else: echo '<h2>Нет записей.</h2>'; endif; ?>
+            </div>
 
             <?php pagination(); ?>
         </div>

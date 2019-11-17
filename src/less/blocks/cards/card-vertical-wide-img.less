@@ -1,0 +1,45 @@
+.card-vertical-wide-img {
+  display: flex;
+  flex-direction: column;
+  max-width: 370px;
+
+  .card__img {
+    height: 262px;
+    background: @yellow;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    padding: 30px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 5px;
+      color: @gray-light;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+    max-width: 230px;
+    max-height: 50px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.card:before {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 100%;
+  }
+}

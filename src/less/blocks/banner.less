@@ -1,14 +1,18 @@
 .banner {
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   background-color: @blue;
   color: @white;
   padding: 30px 25px;
   width: 100%;
   margin-bottom: 60px;
 
+  @media (max-width: 767px) {
+    background: @blue!important;
+  }
+
   @media @view-tablet {
     padding: 55px 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   @media @view-desktop {

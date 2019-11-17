@@ -72,6 +72,30 @@
 </div>
 <!--End Modal-->
 
+<!-- Modal -->
+<div class="modal fade" id="docsModal" tabindex="-1" role="dialog" aria-labelledby="questionModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+
+                <div class="form-modal">
+                    <h2 class="form-title">Выберите документы</h2>
+                    <?php echo do_shortcode('[contact-form-7 id="595" title="Выбрать документы"]'); ?>
+                    <div class="response-info hidden" data-response-title="Ваш запрос принят!" data-response-subtitle="Мы с Вами свяжемся в ближайшее время.">
+                        <img src="./img/svg/email.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Modal-->
+
 <script src="/src/js/shortcode/shortcode.js"></script>
 <?php wp_footer(); ?>
 </body>

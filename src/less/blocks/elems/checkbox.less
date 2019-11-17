@@ -21,6 +21,14 @@
       height: 70%;
       display: none;
     }
+
+    &.checked {
+      background-color: @blue-light;
+
+      img {
+        display: block;
+      }
+    }
   }
 
   label {
@@ -40,35 +48,13 @@
       text-decoration: underline;
     }
 
-    & > input {
+    & input {
       display: none;
 
       &:checked {
 
-        & + .wpcf7-list-item-label .cr {
-          background-color: @blue-light;
-
-          img {
-            display: block;
-          }
-        }
-
-        @media @view-desktop {
-
-          &:hover + .cr {
-            //background-color: @blue;
-          }
-        }
-
         & ~ .c-txt {
           color: @gray;
-        }
-      }
-
-      @media @view-desktop {
-
-        &:not(:checked):not(:disabled):hover + .cr {
-          //background-color: @blue;
         }
       }
 

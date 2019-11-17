@@ -91,63 +91,6 @@ get_header(); ?>
         </div>
     </div>
 
-<!--    <div class="section">-->
-<!--        <div class="container">-->
-<!--            <h2 class="-center">Преимущества работы с нами</h2>-->
-<!---->
-<!--            <div class="grid grid--light">-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Полный комплекс кадастровых работ</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Полное сопровождение клиентов во время и после выполнения кадастровых работ</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Сбор всей необходимой информациию Мы экономим ваше время</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Работа со сложными проектами и нетиповыми решениями</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Бесплатная консультация</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Выполнение срочных проектов</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Полный комплекс кадастровых работ</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Полное сопровождение клиентов во время и после выполнения кадастровых работ</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Сбор всей необходимой информациию Мы экономим ваше время</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Работа со сложными проектами и нетиповыми решениями</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Бесплатная консультация</p>-->
-<!--                </div>-->
-<!--                <div class="grid__item">-->
-<!--                    <div class="grid__icon"></div>-->
-<!--                    <p>Выполнение срочных проектов</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
     <section class="section">
         <div class="container">
             <h2 class="-center"><?= get_field('page_main_clients_title'); ?></h2>
@@ -182,48 +125,26 @@ get_header(); ?>
 
     <section class="section">
         <div class="container">
-            <h2 class="-center">Наши проекты</h2>
+            <h2 class="-center"><?= get_field('page_main_projects_title'); ?></h2>
 
             <div class="owl-projects owl-carousel">
 
-                <a href="#" class="card__link">
-                    <div class="card card-img card--brown">
-                        <div class="card-img__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="card-img__text">
-                            <div class="card__title">Элитный жилой комплекс "Парадный квартал"</div>
-                            <p>Адрес: Парадная ул., 3, корп. 2, Санкт-Петербург, 191014</p>
-                            <p class="card__date">Год 2019</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="card__link">
-                    <div class="card card-img card--brown">
-                        <div class="card-img__img">
-                            <img src="/wp-content/themes/ukon/img/house-1.jpg" alt="">
-                        </div>
-                        <div class="card-img__text">
-                            <div class="card__title">Элитный жилой комплекс "Парадный квартал"</div>
-                            <p>Адрес: Парадная ул., 3, корп. 2, Санкт-Петербург, 191014</p>
-                            <p class="card__date">Год 2019</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="card__link">
-                    <div class="card card-img card--brown">
-                        <div class="card-img__img">
-                            <img src="/wp-content/themes/ukon/img/house-2.jpg" alt="">
-                        </div>
-                        <div class="card-img__text">
-                            <div class="card__title">Элитный жилой комплекс "Парадный квартал"</div>
-                            <p>Адрес: Парадная ул., 3, корп. 2, Санкт-Петербург, 191014</p>
-                            <p class="card__date">Год 2019</p>
-                        </div>
-                    </div>
-                </a>
+                <?php if (get_field('page_main_projects')): ?>
+                    <?php while (has_sub_field('page_main_projects')): ?>
+<!--                        <a href="--><?//= the_sub_field('link'); ?><!--" class="card__link">-->
+                            <div class="card card-img card--brown">
+                                <div class="card-img__img">
+                                    <img src="<?= the_sub_field('image'); ?>" alt="">
+                                </div>
+                                <div class="card-img__text">
+                                    <div class="card__title"><?= the_sub_field('title'); ?></div>
+                                    <p><?= the_sub_field('text'); ?></p>
+                                    <p class="card__date"><?= the_sub_field('extra_text'); ?></p>
+                                </div>
+                            </div>
+<!--                        </a>-->
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>

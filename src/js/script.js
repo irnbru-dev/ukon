@@ -112,20 +112,15 @@ $(function () {
         }
     });
 
-    // $('[data-toggle="expand"]').on('click', function (e) {
-    //     e.preventDefault();
-    //
-    //     let $target = $(e.target);
-    //     // TODO: refactor
-    //     if ($target.hasClass('btn')) {
-    //         window.location.href = $target.attr('href');
-    //     } else {
-    //         $(this).next().stop().slideToggle(100, function () {
-    //             if ($(this).is(':visible'))
-    //                 $(this).css('display', 'flex');
-    //         }).parent().toggleClass('active');
-    //     }
-    // });
+    $('input[type="checkbox"]').on('click', function () {
+
+        console.log('click!')
+        if (!$(this).hasClass('checked')) {
+            $(this).addClass('checked').parents('.checkbox').find('.cr').addClass('checked');
+        } else {
+            $(this).removeClass('checked').parents('.checkbox').find('.cr').removeClass('checked');
+        }
+    });
 
 });
 
