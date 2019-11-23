@@ -24,14 +24,14 @@
 
             <div class="address">
                 <a href="#">
-                    <img src="/wp-content/themes/ukon/img/point.png" alt="" class="icon">
+                    <img src="/wp-content/themes/ukon/img/svg/location.svg" alt="" class="icon">
                     <?= get_field('contacts_address', 107)?>
                 </a>
             </div>
 
             <div class="tel">
                 <a href="tel:<?= get_field('contacts_tel', 107)?>">
-                    <img src="/wp-content/themes/ukon/img/tel.png" alt="" class="icon">
+                    <img src="/wp-content/themes/ukon/img/svg/tel.svg" alt="" class="icon">
                     <b><?= get_field('contacts_tel', 107)?></b>
                 </a>
                 <button type="button" class="link ml-2" data-toggle="modal" data-target="#questionModal"><?= get_field('contacts_callback', 107)['text']?></button>
@@ -39,7 +39,7 @@
 
             <div class="mail">
                 <a href="mailto:<?= get_field('contacts_email', 107)?>">
-                    <img src="/wp-content/themes/ukon/img/mail.png" alt="" class="icon">
+                    <img src="/wp-content/themes/ukon/img/svg/email-header.svg" alt="" class="icon">
                     <?= get_field('contacts_email', 107)?>
                 </a>
             </div>
@@ -51,7 +51,8 @@
             <div class="header__main-wrap">
                 <div class="logo">
                     <a href="/">
-                        <img src="<?= get_field('header', 125)['logo']; ?>" alt="">
+                        <img src="<?= get_field('header', 125)['logo']; ?>" alt="" class="logo__main">
+                        <img src="<?= get_field('header', 125)['logo_scrolled']; ?>" alt="" class="logo__scrolled">
                     </a>
                     <p><?= get_field('header', 125)['text']; ?></p>
                 </div>

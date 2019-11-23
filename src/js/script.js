@@ -1,60 +1,61 @@
-$('.navbar-toggler').on('click', function () {
-    $target = $(this).data("target");
+$(function () {
+    $('.navbar-toggler').on('click', function () {
+        $target = $(this).data("target");
 
-    $(this).toggleClass('open');
-    $('.menu-main-container').toggleClass('show');
-});
-
-
-$('.page_item_has_children > a').on('click', function (e) {
-    e.preventDefault();
-
-    $(this).next('.children').collapse("toggle");
-});
+        $(this).toggleClass('open');
+        $('.menu-main-container').toggleClass('show');
+    });
 
 
-$(window).on('load resize', function () {
-    if ($(window).width() < 991) {
-        
-        $('.menu > .menu-item-has-children > a').on('click tap', function (e) {
-            e.preventDefault();
+    $('.page_item_has_children > a').on('click', function (e) {
+        e.preventDefault();
 
-            $(this).toggleClass('open').next('.sub-menu').collapse("toggle");
-        });
-    }
-});
+        $(this).next('.children').collapse("toggle");
+    });
+
+
+    $(window).on('load resize', function () {
+        if ($(window).width() < 991) {
+
+            $('.menu > .menu-item-has-children > a').on('click tap', function (e) {
+                e.preventDefault();
+
+                $(this).toggleClass('open').next('.sub-menu').collapse("toggle");
+            });
+        }
+    });
 
 
 //contact form 7
-document.addEventListener('wpcf7mailsent', function () {
+    document.addEventListener('wpcf7mailsent', function () {
 
-    console.log('SEND')
+        console.log('SEND')
 
-    var $modal = $('.modal'),
-        $modalParts = $modal.find('.modal-header,.modal-body,.modal-footer'),
-        $responseMsg = $('.response-info').data('response-title'),
-        $responseMsgSub = $('.response-info').data('response-subtitle');
+        var $modal = $('.modal'),
+            $modalParts = $modal.find('.modal-header,.modal-body,.modal-footer'),
+            $responseMsg = $('.response-info').data('response-title'),
+            $responseMsgSub = $('.response-info').data('response-subtitle');
 
-    $modalParts.addClass('success');
+        $modalParts.addClass('success');
 
-    setTimeout(function () {
-        $modalParts.hide(300);
-        $modal
-            .find('.modal-content')
-            .append('<div class="response-message"><h2>' + $responseMsg + '</h2><p>' + $responseMsgSub + '</p><div class="response-message__icon"><img src="/wp-content/themes/ukon/img/svg/email.svg" alt=""></div></div>')
+        setTimeout(function () {
+            $modalParts.hide(300);
+            $modal
+                .find('.modal-content')
+                .append('<div class="response-message"><h2>' + $responseMsg + '</h2><p>' + $responseMsgSub + '</p><div class="response-message__icon"><img src="/wp-content/themes/ukon/img/svg/email.svg" alt=""></div></div>')
 
-    }, 300);
+        }, 300);
 
-    $modal.on('hidden.bs.modal', function () {
-        $modalParts.removeClass('success');
-        $modalParts.show();
-        $('.response-message').remove();
-    });
-}, false);
+        $modal.on('hidden.bs.modal', function () {
+            $modalParts.removeClass('success');
+            $modalParts.show();
+            $('.response-message').remove();
+        });
+    }, false);
 
 
 //owl
-$(function () {
+
     $(".owl-projects").owlCarousel({
         loop: true,
         dots: true,
@@ -122,5 +123,38 @@ $(function () {
         }
     });
 
+    /**
+     * Scroll top.
+     */
+    var upBtn = $('#up-btn');
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 300) {
+            upBtn.addClass('show');
+        } else {
+            upBtn.removeClass('show');
+        }
+    });
+
+    upBtn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 1000);
+    });
+
+});
+
+var header = document.querySelector('.header__main');
+var body = document.body;
+
+window.addEventListener('scroll', function () {
+
+    if ((window.scrollY) >= 400) {
+        header.classList.add('fixed');
+        header.style.top = '0';
+
+    } else {
+        header.classList.remove('fixed');
+        header.style.top = '100%';
+    }
 });
 

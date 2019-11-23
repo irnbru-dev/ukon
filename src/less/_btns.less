@@ -30,5 +30,42 @@
       background: @yellow;
     }
   }
+
+  &-up {
+    display: inline-block;
+    background-color: @yellow;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    box-shadow: none;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+
+    svg {
+      margin-top: 6px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken(@yellow, 10%);
+    }
+
+    &:active {
+      background-color: darken(@yellow, 20%);
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
 }
 

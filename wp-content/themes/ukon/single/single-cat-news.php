@@ -12,13 +12,13 @@
             </div>
             <aside class="right-aside">
 
-                <div class="aside-banner">
-                    <div class="form-banner">
-                        <img src="" alt="" class="form-banner__icon">
-                        <p class="form-banner__title">Подписаться</p>
-                        <?php echo do_shortcode('[contact-form-7 id="299" title="Подписаться"]')?>
-                    </div>
-                </div>
+<!--                <div class="aside-banner">-->
+<!--                    <div class="form-banner">-->
+<!--                        <img src="" alt="" class="form-banner__icon">-->
+<!--                        <p class="form-banner__title">Подписаться</p>-->
+<!--                        --><?php //echo do_shortcode('[contact-form-7 id="299" title="Подписаться"]')?>
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="aside-banner">
                     <div class="form-banner">
