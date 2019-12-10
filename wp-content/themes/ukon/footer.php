@@ -1,3 +1,110 @@
+<?php if (get_field('add_promo_block')) : ; ?>
+    <div class="section promo">
+        <div class="container">
+            <div class="promo__title">
+                <span class="topic"><?= get_field('promo_phrase', 818)['title'] ?></span>
+                <span><?= get_field('promo_phrase', 818)['text'] ?></span>
+            </div>
+
+            <div class="row">
+                <?php if (get_field('promo', 818)): ?>
+                    <?php while (has_sub_field('promo', 818)): ?>
+                        <div class="col-md-3">
+                            <div class="promo__item">
+                                <span class="promo__item-number"><?= the_sub_field('number'); ?></span>
+                                <p><?= the_sub_field('text'); ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<?php if (get_field('add_advantages_block')) : ; ?>
+    <div class="section section--blue-bg advantages">
+        <div class="container">
+            <h2 class="-center"><?= get_field('advantages_title', 818); ?></h2>
+
+            <div class="grid">
+                <?php if (get_field('advantages', 818)): ?>
+                    <?php while (has_sub_field('advantages', 818)): ?>
+                        <div class="grid__item">
+                            <div class="grid__icon"><img src="<?= the_sub_field('icon'); ?>" alt=""></div>
+                            <p><?= the_sub_field('text'); ?></p>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<?php if (get_field('add_clients_block')) : ; ?>
+    <section class="section">
+        <div class="container">
+            <h2 class="-center"><?= get_field('clients_title', 818); ?></h2>
+            <div class="clients-owl owl-carousel">
+
+                <?php if (get_field('clients', 818)): ?>
+                    <?php while (has_sub_field('clients', 818)): ?>
+                        <div class="clients__item">
+                            <img src="<?= the_sub_field('image'); ?>" alt="">
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+<?php if (get_field('add_reviews_block')) : ; ?>
+    <section class="section section--light-bg">
+        <div class="container">
+            <h2 class="-center"><?= get_field('reviews_title', 818); ?></h2>
+            <div class="reviews-owl owl-carousel">
+
+                <?php if (get_field('reviews', 818)): ?>
+                    <?php while (has_sub_field('reviews', 818)): ?>
+                        <div class="item">
+                            <img src="<?= the_sub_field('image'); ?>" alt="">
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+<?php if(get_field('add_projects_block')) : ?>
+    <section class="section">
+        <div class="container">
+            <h2 class="-center"><?= get_field('projects_title', 818); ?></h2>
+
+            <div class="owl-projects owl-carousel">
+
+                <?php if (get_field('projects', 818)): ?>
+                    <?php while (has_sub_field('projects', 818)): ?>
+                        <!--                        <a href="--><?//= the_sub_field('link'); ?><!--" class="card__link">-->
+                        <div class="card card-img card--brown">
+                            <div class="card-img__img">
+                                <img src="<?= the_sub_field('image'); ?>" alt="">
+                            </div>
+                            <div class="card-img__text">
+                                <div class="card__title"><?= the_sub_field('title'); ?></div>
+                                <p><?= the_sub_field('text'); ?></p>
+                                <p class="card__date"><?= the_sub_field('extra_text'); ?></p>
+                            </div>
+                        </div>
+                        <!--                        </a>-->
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <section class="question">
     <div class="container">
 
