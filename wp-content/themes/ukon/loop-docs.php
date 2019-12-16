@@ -7,7 +7,7 @@
             <div class="card-vertical-wide-img__text">
                 <div class="card__title"><?= the_title(); ?></div>
                 <?= the_content(); ?>
-                <button class="btn btn--bordered">
+                <button class="btn btn--bordered" data-title="">
                     Подготовить документы
                 </button>
             </div>

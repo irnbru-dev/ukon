@@ -208,6 +208,7 @@
 
                 <div class="form-modal">
                     <h2 class="form-title">Выберите документы</h2>
+                    <p class="form-docs-subtitle"></p>
                     <?php echo do_shortcode('[contact-form-7 id="595" title="Выбрать документы"]'); ?>
                     <div class="response-info hidden" data-response-title="Ваш запрос принят!"
                          data-response-subtitle="Мы с Вами свяжемся в ближайшее время.">

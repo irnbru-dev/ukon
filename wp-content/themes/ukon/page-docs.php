@@ -9,6 +9,13 @@ get_header(); ?>
                     <h1>Документы для ранее учтенных объектов</h1>
                     <p>Найдите свой жилой комплекс или другой объект недвижимости, и мы подготовим для вас необходимую
                         документацию</p>
+
+                    <?php if (current_user_can('administrator')) { ?>
+                        <form action="" class="form form-search">
+                            <input type="text" id="search-docs-input" placeholder="Введите название жилого комплекса">
+                            <input type="submit" value="Поиск" class="btn">
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
 
@@ -18,19 +25,21 @@ get_header(); ?>
 
     <section class="section section--light-bg">
         <div class="container">
-            <div class="row">
+
+            <div class="row" id="docs">
 
                 <?php if (get_field('page_docs_object')): ?>
                     <?php while (has_sub_field('page_docs_object')): ?>
                         <div class="col-md-4">
-                            <div class="card card-vertical-wide-img card--brown">
+                            <div class="card card-vertical-wide-img card--brown card-docs">
                                 <div class="card__img">
                                     <img src="<?= the_sub_field('image'); ?>" alt="">
                                 </div>
                                 <div class="card-vertical-wide-img__text">
                                     <div class="card__title"><?= the_sub_field('title'); ?></div>
                                     <?= the_sub_field('text'); ?>
-                                    <button class="btn btn--bordered" data-toggle="modal" data-target="#docsModal">
+                                    <button class="btn btn--bordered" data-toggle="modal" data-target="#docsModal"
+                                            data-title="<?= the_sub_field('title'); ?>">
                                         Подготовить документы
                                     </button>
                                 </div>

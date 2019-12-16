@@ -29,8 +29,6 @@ $(function () {
 //contact form 7
     document.addEventListener('wpcf7mailsent', function () {
 
-        console.log('SEND')
-
         var $modal = $('.modal'),
             $modalParts = $modal.find('.modal-header,.modal-body,.modal-footer'),
             $responseMsg = $('.response-info').data('response-title'),
@@ -52,6 +50,17 @@ $(function () {
             $('.response-message').remove();
         });
     }, false);
+
+
+    $('[data-target="#docsModal"]').on('click', function () {
+
+        var docsTitle = $(this).data('title');
+
+        $('.form-docs-subtitle').text(docsTitle);
+
+        $('#place-title').val(docsTitle);
+
+    });
 
 
 //owl
@@ -158,3 +167,30 @@ window.addEventListener('scroll', function () {
     }
 });
 
+//SEARCHING IN DOCS
+$('.form-search input[type="submit"]').on('click', function (e) {
+    e.preventDefault();
+
+    myFunction();
+});
+
+function myFunction() {
+    var input, docsCards, cardTitle, filter, i, txtValue;
+    input = document.getElementById("search-docs-input");
+    filter = input.value.toUpperCase();
+    docsCards = document.querySelectorAll(".card-docs");
+
+    for (i = 0; i < docsCards.length; i++) {
+
+        cardTitle = docsCards[i].querySelector('.card__title');
+
+        txtValue = cardTitle.textContent || cardTitle.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            docsCards[i].parentElement.style.display = "";
+
+        } else {
+            docsCards[i].parentElement.style.display = "none";
+        }
+    }
+}
