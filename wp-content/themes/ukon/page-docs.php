@@ -10,12 +10,10 @@ get_header(); ?>
                     <p>Найдите свой жилой комплекс или другой объект недвижимости, и мы подготовим для вас необходимую
                         документацию</p>
 
-                    <?php if (current_user_can('administrator')) { ?>
                         <form action="" class="form form-search">
                             <input type="text" id="search-docs-input" placeholder="Введите название жилого комплекса">
                             <input type="submit" value="Поиск" class="btn">
                         </form>
-                    <?php } ?>
                 </div>
             </div>
 
