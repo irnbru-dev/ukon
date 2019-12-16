@@ -194,3 +194,24 @@ function myFunction() {
         }
     }
 }
+
+//SORTING IN DOCS
+$('[data-sorting-param="alphabet"] .sort__btn').on('click', function (){
+
+    $('.sort__btn').removeClass('active');
+    $(this).addClass('active');
+
+    if ($(this).hasClass('up')) {
+
+        $('#docs .card-docs').parent().sort(function(a,b) {
+            return $(a).find(".card__title").text() > $(b).find(".card__title").text() ? 1 : -1;
+        }).appendTo("#docs");
+    } else {
+        $('#docs .card-docs').parent().sort(function(a,b) {
+            return $(a).find(".card__title").text() < $(b).find(".card__title").text() ? 1 : -1;
+        }).appendTo("#docs");
+
+
+    }
+
+});

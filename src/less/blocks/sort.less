@@ -1,0 +1,35 @@
+.sort {
+
+  &__btn {
+
+    svg {
+      width: 15px;
+      height: 13px;
+    }
+
+    &.up {
+      transform: rotate(180deg);
+    }
+
+    &.active {
+      svg path {
+        fill: @yellow !important;
+      }
+    }
+
+    @media @view-desktop {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.sorting {
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
