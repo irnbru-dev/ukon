@@ -1,7 +1,7 @@
 <?php /* Template Name: Документы для ранее учтенных объектов */
 get_header(); ?>
 
-    <div class="main-screen-inner -docs" style="background-image: <?= get_field('page_docs_main_screen_bg')?>">
+    <div class="main-screen-inner -docs" style="background-image: url(<?= get_field('page_docs_main_screen_bg')?>)">
         <div class="container">
 
             <div class="row">
