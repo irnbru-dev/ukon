@@ -5,6 +5,10 @@
     svg {
       width: 15px;
       height: 13px;
+
+      path {
+        transition: all .3s ease-in-out;
+      }
     }
 
     &.up {
@@ -12,15 +16,50 @@
     }
 
     &.active {
+
       svg path {
         fill: @yellow !important;
       }
     }
 
     @media @view-desktop {
+
       &:hover {
         cursor: pointer;
+
+        svg path {
+          fill: @yellow !important;
+        }
       }
+    }
+  }
+
+  &__btn--bubble {
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: darken(@gray-extra-light, 10%);
+    transition: color .3s ease-in-out, background .3s ease-in-out;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 15px;
+
+    @media @view-tablet {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      background: @yellow;
+      color: @white;
+      cursor: pointer;
+    }
+
+    &.active {
+      background: lighten(@blue, 5%);
+      color: @white;
     }
   }
 }

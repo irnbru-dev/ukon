@@ -39,6 +39,11 @@
             color: @white;
             font-size: 14px;
             font-weight: 400;
+            transition: color .15s ease-in-out;
+
+            &:hover {
+              color: @yellow !important;
+            }
           }
         }
 
@@ -58,6 +63,17 @@
 
             @media @view-desktop {
               margin-left: 10px;
+
+            }
+          }
+
+          &:hover {
+
+            & > a:after {
+
+              @media @view-desktop {
+                background-image: url("../img/svg/arrow-d-yellow.svg");
+              }
             }
           }
         }

@@ -124,7 +124,6 @@ $(function () {
 
     $('input[type="checkbox"]').on('click', function () {
 
-        console.log('click!')
         if (!$(this).hasClass('checked')) {
             $(this).addClass('checked').parents('.checkbox').find('.cr').addClass('checked');
         } else {
@@ -171,10 +170,10 @@ window.addEventListener('scroll', function () {
 $('.form-search input[type="submit"]').on('click', function (e) {
     e.preventDefault();
 
-    myFunction();
+    doSearch();
 });
 
-function myFunction() {
+function doSearch() {
     var input, docsCards, cardTitle, filter, i, txtValue;
     input = document.getElementById("search-docs-input");
     filter = input.value.toUpperCase();
@@ -196,22 +195,37 @@ function myFunction() {
 }
 
 //SORTING IN DOCS
-$('[data-sorting-param="alphabet"] .sort__btn').on('click', function (){
+$('.sort__btn').on('click', function () {
 
-    $('.sort__btn').removeClass('active');
+    $(this).siblings('.sort__btn').removeClass('active');
     $(this).addClass('active');
 
+    //ALPABETICALLY
     if ($(this).hasClass('up')) {
 
-        $('#docs .card-docs').parent().sort(function(a,b) {
+        $('#docs .card-docs').parent().sort(function (a, b) {
             return $(a).find(".card__title").text() > $(b).find(".card__title").text() ? 1 : -1;
         }).appendTo("#docs");
-    } else {
-        $('#docs .card-docs').parent().sort(function(a,b) {
+    } else if ($(this).hasClass('down')) {
+        $('#docs .card-docs').parent().sort(function (a, b) {
             return $(a).find(".card__title").text() < $(b).find(".card__title").text() ? 1 : -1;
         }).appendTo("#docs");
+    }
 
+    //BY OBJECT TYPE
+    if ($(this).attr("data-type") === 'all') {
 
+        $('.card-docs').addClass('active').parent().show();
+
+    } else if (($(this).attr("data-type") === 'complex')) {
+
+        $('.card-docs').removeClass('active').parent().hide();
+        $('.card-docs[data-type="complex"]').addClass('active').parent().show();
+
+    } else if (($(this).attr("data-type") === 'object')) {
+
+        $('.card-docs').removeClass('active').parent().hide();
+        $('.card-docs[data-type="object"]').addClass('active').parent().show();
     }
 
 });
